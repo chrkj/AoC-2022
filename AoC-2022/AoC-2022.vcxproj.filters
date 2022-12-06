@@ -27,6 +27,9 @@
     <ClCompile Include="Day03\Day03.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day04\Day04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day01\TEST.IN" />
@@ -37,6 +40,8 @@
     <None Include="Day02\1.IN" />
     <None Include="Day03\TEST.IN" />
     <None Include="Day03\1.IN" />
+    <None Include="Day04\1.IN" />
+    <None Include="Day04\TEST.IN" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\AocDay.h">
@@ -52,6 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\ScopedTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day04\Day04.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

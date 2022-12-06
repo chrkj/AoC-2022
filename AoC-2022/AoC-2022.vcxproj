@@ -134,6 +134,7 @@
     <ClCompile Include="Day01\Day01.h" />
     <ClCompile Include="Day02\Day02.h" />
     <ClCompile Include="Day03\Day03.cpp" />
+    <ClCompile Include="Day04\Day04.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,13 +146,17 @@
     <None Include="Day02\TEST.IN" />
     <None Include="Day03\1.IN" />
     <None Include="Day03\TEST.IN" />
+    <None Include="Day04\1.IN" />
+    <None Include="Day04\TEST.IN" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\AocDay.h" />
     <ClInclude Include="Core\Days.h" />
     <ClInclude Include="Day03\Day03.h" />
+    <ClInclude Include="Day04\Day04.h" />
     <ClInclude Include="Utils\ScopedTimer.h" />
     <ClInclude Include="Utils\Timer.h" />
+    <ClInclude Include="Utils\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
