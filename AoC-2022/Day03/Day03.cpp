@@ -1,6 +1,6 @@
 #include "Day03.h"
 
-int calculatePrioSum(char c)
+int getPrioValue(char c)
 {
 	int value = (int)c;
 	if (value < 96)
@@ -27,7 +27,6 @@ void Day03::part1()
 
 		for (size_t i = currentLine.size() / 2; i < currentLine.size(); i++) 
 		{
-
 			if (compartmentOne.contains(currentLine[i]))
 			{
 				duplicate = currentLine[i];
@@ -35,12 +34,43 @@ void Day03::part1()
 			}
 		}
 
-		prioritySum += calculatePrioSum(duplicate);
+		prioritySum += getPrioValue(duplicate);
 	}
 	printf("Sum: %d", prioritySum);
 }
 
 void Day03::part2()
 {
+	ScopedTimer timer;
 
+	std::string currentLine;
+	std::ifstream input("Day03/1.IN");
+
+	int32_t prioritySum = 0;
+	while (getline(input, currentLine))
+	{
+		char badge;
+		std::unordered_set<char> firstSet;
+		std::unordered_set<char> secondSet;
+		
+		for (size_t i = 0; i < currentLine.length(); i++)
+			firstSet.insert(currentLine[i]);
+
+		getline(input, currentLine);
+		for (size_t j = 0; j < currentLine.length(); j++)
+		{
+			if (firstSet.contains(currentLine[j]))
+				secondSet.insert(currentLine[j]);
+		}
+
+		getline(input, currentLine);
+		for (size_t k = 0; k < currentLine.length(); k++)
+		{
+			if (secondSet.contains(currentLine[k]))
+				badge = currentLine[k];
+		}
+
+		prioritySum += getPrioValue(badge);
+	}
+	printf("Sum: %d", prioritySum);
 }
