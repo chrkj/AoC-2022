@@ -13,7 +13,7 @@ public:
 
 	~ScopedTimer()
 	{
-		std::cout << "\n" << ElapsedMillis() << "ms";
+		std::cout << "\n" << ElapsedMillis() << "ms\n";
 	}
 
 };
