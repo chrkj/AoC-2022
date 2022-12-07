@@ -6,7 +6,7 @@ void Day04::part1()
 	ScopedTimer timer;
 
 	std::vector<std::string> delimiters = { ",", "-" };
-	std::vector<std::vector<int>> input = input_to_int_2D(read_input_2D("Day04/1.IN", delimiters));
+	std::vector<std::vector<int>> input = Utils::input_to_int_2D(Utils::read_input_2D("Day04/1.IN", delimiters));
 
 	int32_t count = 0;
 	for (const auto& line : input) 
@@ -22,7 +22,7 @@ void Day04::part2()
 	ScopedTimer timer;
 
 	std::vector<std::string> delimiters = { ",", "-" };
-	std::vector<std::vector<int>> input = input_to_int_2D(read_input_2D("Day04/1.IN", delimiters));
+	std::vector<std::vector<int>> input = Utils::input_to_int_2D(Utils::read_input_2D("Day04/1.IN", delimiters));
 
 	int32_t count = 0;
 	for (const auto& line : input)

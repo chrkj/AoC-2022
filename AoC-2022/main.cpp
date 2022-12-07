@@ -2,7 +2,7 @@
 
 int main()
 {
-	Day04 day;
+	Day07 day;
 	printf("----------PART1----------\n");
 	day.part1();
 	printf("\n----------PART2----------\n");
