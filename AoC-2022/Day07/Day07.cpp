@@ -93,7 +93,7 @@ void Day07::part1()
 		if (dir->size < MAX_SIZE) 
 			sum += dir->size;
 	}
-	printf("Sum: %d", sum);
+	printf("Sum: %lld", sum);
 }
 
 void Day07::part2()
@@ -110,5 +110,5 @@ void Day07::part2()
 		if (dirSize >= spaceToBeFreed && dirSize < sizeOfDirToDelete)
 			sizeOfDirToDelete = dirSize;
 	}
-	printf("Size of dir to delete: %d", sizeOfDirToDelete);
+	printf("Size of dir to delete: %lld", sizeOfDirToDelete);
 }
