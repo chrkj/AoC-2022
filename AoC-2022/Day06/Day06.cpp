@@ -1,7 +1,6 @@
 #include "Day06.h"
-#include <Utils/Utils.h>
 
-int getMarkerIndex(std::string data, uint32_t distanctCharaters)
+int GetMarkerIndex(std::string data, uint32_t distanctCharaters)
 {
 	std::map<char, int> map;
 	for (size_t rightPtr = 0, leftPtr = 0; rightPtr < data.length(); rightPtr++)
@@ -19,22 +18,22 @@ int getMarkerIndex(std::string data, uint32_t distanctCharaters)
 	}
 }
 
-void Day06::part1()
+void Day06::Part1()
 {
 	ScopedTimer timer;
 
 	std::string dataStream;
 	std::ifstream input("Day06/1.IN");
 	getline(input, dataStream);
-	printf("Index: %d", getMarkerIndex(dataStream, 4));
+	printf("Index: %d", GetMarkerIndex(dataStream, 4));
 }
 
-void Day06::part2()
+void Day06::Part2()
 {
 	ScopedTimer timer;
 
 	std::string dataStream;
 	std::ifstream input("Day06/1.IN");
 	getline(input, dataStream);
-	printf("Index: %d", getMarkerIndex(dataStream, 14));
+	printf("Index: %d", GetMarkerIndex(dataStream, 14));
 }

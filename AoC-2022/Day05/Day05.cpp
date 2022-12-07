@@ -1,17 +1,16 @@
 #include "Day05.h"
-#include <Utils/Utils.h>
 
-void Day05::part1()
+void Day05::Part1()
 {
 	ScopedTimer timer;
 
 	std::vector<std::string> delimiters = { "move ", " from ", " to " };
-	std::vector<std::vector<std::string>> input = Utils::read_input_2D("Day05/TEST.IN", delimiters);
+	std::vector<std::vector<std::string>> input = Utils::ReadInput2D("Day05/TEST.IN", delimiters);
 
 	std::cout;
 }
 
-void Day05::part2()
+void Day05::Part2()
 {
 	ScopedTimer timer;
 }

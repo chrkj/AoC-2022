@@ -1,12 +1,11 @@
 #include "Day04.h"
-#include <Utils/Utils.h>
 
-void Day04::part1()
+void Day04::Part1()
 {
 	ScopedTimer timer;
 
 	std::vector<std::string> delimiters = { ",", "-" };
-	std::vector<std::vector<int>> input = Utils::input_to_int_2D(Utils::read_input_2D("Day04/1.IN", delimiters));
+	std::vector<std::vector<int>> input = Utils::InputToInt2D(Utils::ReadInput2D("Day04/1.IN", delimiters));
 
 	int32_t count = 0;
 	for (const auto& line : input) 
@@ -17,12 +16,12 @@ void Day04::part1()
 	printf("Count: %d", count);
 }
 
-void Day04::part2()
+void Day04::Part2()
 {
 	ScopedTimer timer;
 
 	std::vector<std::string> delimiters = { ",", "-" };
-	std::vector<std::vector<int>> input = Utils::input_to_int_2D(Utils::read_input_2D("Day04/1.IN", delimiters));
+	std::vector<std::vector<int>> input = Utils::InputToInt2D(Utils::ReadInput2D("Day04/1.IN", delimiters));
 
 	int32_t count = 0;
 	for (const auto& line : input)

@@ -1,5 +1,4 @@
 #include "Day07.h"
-#include <Utils/Utils.h>
 
 #define INPUT "Day07/1.IN"
 #define MAX_SIZE 100000
@@ -18,7 +17,7 @@ struct Node
 	{}
 };
 
-void updateDirSizes(Node* currentNode, int64_t size)
+void UpdateDirSizes(Node* currentNode, int64_t size)
 {
 	while (currentNode->parent != nullptr)
 	{
@@ -28,7 +27,7 @@ void updateDirSizes(Node* currentNode, int64_t size)
 	currentNode->size += size;
 }
 
-inline std::vector<std::shared_ptr<Node>> createDirs()
+inline std::vector<std::shared_ptr<Node>> CreateDirs()
 {
 	std::ifstream input(INPUT);
 
@@ -65,7 +64,7 @@ inline std::vector<std::shared_ptr<Node>> createDirs()
 			break;
 		default:
 			// Add File or Folder to current Node
-			std::vector<std::string> data = Utils::split_string(currentLine, ' ');
+			std::vector<std::string> data = Utils::SplitString(currentLine, ' ');
 			if (data[0] == "dir")
 			{
 				auto dir = std::make_shared<Node>(data[1], 0, currentNode);
@@ -75,7 +74,7 @@ inline std::vector<std::shared_ptr<Node>> createDirs()
 			else
 			{
 				currentNode->children.push_back(std::make_shared<Node>(data[1], std::stoi(data[0]), currentNode));
-				updateDirSizes(currentNode, std::stoi(data[0]));
+				UpdateDirSizes(currentNode, std::stoi(data[0]));
 			}
 			break;
 		}
@@ -83,12 +82,12 @@ inline std::vector<std::shared_ptr<Node>> createDirs()
 	return directories;
 }
 
-void Day07::part1()
+void Day07::Part1()
 {
 	ScopedTimer timer;
 
 	int64_t sum = 0;
-	for (auto dir : createDirs())
+	for (auto dir : CreateDirs())
 	{
 		if (dir->size < MAX_SIZE) 
 			sum += dir->size;
@@ -96,11 +95,11 @@ void Day07::part1()
 	printf("Sum: %lld", sum);
 }
 
-void Day07::part2()
+void Day07::Part2()
 {
 	ScopedTimer timer;
 
-	auto dirs = createDirs();
+	auto dirs = CreateDirs();
 	int64_t spaceToBeFreed = DISK_SPACE_NEEDED - (TOTAL_DISK_SPACE - dirs[0]->size);
 
 	int64_t sizeOfDirToDelete = TOTAL_DISK_SPACE;

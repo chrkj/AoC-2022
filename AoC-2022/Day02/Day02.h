@@ -10,7 +10,7 @@
 class Day02 : public AocDay 
 {
 public:
-	int getScore(char myPick, char opponentPick)
+	int GetScore(char myPick, char opponentPick)
 	{
 		int score = 0;
 		switch (myPick)
@@ -45,7 +45,7 @@ public:
 		return score;
 	}
 
-	void AocDay::part1()
+	void AocDay::Part1()
 	{
 		std::string currentLine;
 		std::ifstream input("Day02/1.IN");
@@ -57,7 +57,7 @@ public:
 		{
 			myPick = currentLine[2];
 			opponentPick = currentLine[0];
-			totalScore += getScore(myPick, opponentPick);
+			totalScore += GetScore(myPick, opponentPick);
 		}
 		std::cout << totalScore << "\n";
 	}
@@ -65,7 +65,7 @@ public:
 	// X = Lose
 	// Y = Draw
 	// Z = Win
-	char getPick(char opponentPick, char desiredFallout)
+	char GetPick(char opponentPick, char desiredFallout)
 	{
 		char pick;
 		switch (desiredFallout)
@@ -100,7 +100,7 @@ public:
 		return pick;
 	}
 
-	void AocDay::part2()
+	void AocDay::Part2()
 	{
 		std::string currentLine;
 		std::ifstream input("Day02/1.IN");
@@ -111,9 +111,9 @@ public:
 		while (getline(input, currentLine))
 		{
 			opponentPick = currentLine[0];
-			myPick = getPick(opponentPick, currentLine[2]);
+			myPick = GetPick(opponentPick, currentLine[2]);
 
-			totalScore += getScore(myPick, opponentPick);
+			totalScore += GetScore(myPick, opponentPick);
 		}
 		std::cout << totalScore << "\n";
 

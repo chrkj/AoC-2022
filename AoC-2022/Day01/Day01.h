@@ -3,7 +3,7 @@
 class Day01 : public AocDay
 {
 public:
-	void AocDay::part1()
+	void AocDay::Part1()
 	{
 		std::string currentLine;
 		std::ifstream input("Day01/1.IN");

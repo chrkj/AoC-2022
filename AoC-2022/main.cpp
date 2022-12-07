@@ -4,7 +4,7 @@ int main()
 {
 	Day06 day;
 	printf("----------PART1----------\n");
-	day.part1();
+	day.Part1();
 	printf("\n----------PART2----------\n");
-	day.part2();
+	day.Part2();
 }

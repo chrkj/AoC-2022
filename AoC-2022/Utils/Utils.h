@@ -1,9 +1,8 @@
-
 namespace Utils
 {
 	// convert 2D vector of vector of strings to vector of vector of ints
 	template <typename Int = int, template <typename...> typename Cont2 = std::vector, template <typename...> typename Cont1 = std::vector>
-	Cont1<Cont2<Int>> input_to_int_2D(const Cont1<Cont2<std::string, std::allocator<std::string>>, std::allocator<std::vector<std::string, std::allocator<std::string>>>>& input) {
+	Cont1<Cont2<Int>> InputToInt2D(const Cont1<Cont2<std::string, std::allocator<std::string>>, std::allocator<std::vector<std::string, std::allocator<std::string>>>>& input) {
 
 		const size_t& size = input.size();
 		Cont1<Cont2<Int>> output(size);
@@ -34,7 +33,7 @@ namespace Utils
 	// Function to read input file "file_name" containing lines split by multiple delimiters
 	// and output a Cont1(vector) of Cont2(vector) of strings called "input"
 	template <template <typename...> typename Cont2 = std::vector, template <typename...> typename Cont1 = std::vector >
-	Cont1<Cont2<std::string>> read_input_2D(std::string file_name, std::vector<std::string> delimiters) {
+	Cont1<Cont2<std::string>> ReadInput2D(std::string file_name, std::vector<std::string> delimiters) {
 
 		if (delimiters.empty()) {
 			std::cout << "No delimiters provided. Use read_input instead of read_input_2D" << std::endl;
@@ -99,7 +98,7 @@ namespace Utils
 	// Function to read input file "file_name" containing values separated by
 	// "separator" and output a Cont(vector) of strings called "input"
 	template <template <typename...> typename Cont = std::vector>
-	Cont<std::string> read_input(std::string file_name, std::vector<std::string> delimiters = {}) {
+	Cont<std::string> ReadInput(std::string file_name, std::vector<std::string> delimiters = {}) {
 
 		// output vector of strings
 		Cont<std::string> input;
@@ -156,8 +155,7 @@ namespace Utils
 	}
 
 
-
-	inline std::vector<std::string> split_string(std::string str, char delimiter)
+	inline std::vector<std::string> SplitString(std::string str, char delimiter)
 	{
 		std::string token;
 		std::vector<std::string> tokens;
@@ -167,5 +165,12 @@ namespace Utils
 			tokens.push_back(token);
 
 		return tokens;
+	}
+
+
+	template<typename T>
+	inline void PrintVector(const T& t)
+	{
+		std::copy(t.cbegin(), t.cend(), std::ostream_iterator<typename T::value_type>(std::cout, ", "));
 	}
 }

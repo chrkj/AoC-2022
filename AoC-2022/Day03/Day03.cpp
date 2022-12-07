@@ -1,6 +1,6 @@
 #include "Day03.h"
 
-int getPrioValue(char c)
+int GetPrioValue(char c)
 {
 	int value = (int)c;
 	if (value < 96)
@@ -9,7 +9,7 @@ int getPrioValue(char c)
 		return value - 96;
 }
 
-void Day03::part1()
+void Day03::Part1()
 {
 	ScopedTimer timer;
 	
@@ -34,12 +34,12 @@ void Day03::part1()
 			}
 		}
 
-		prioritySum += getPrioValue(duplicate);
+		prioritySum += GetPrioValue(duplicate);
 	}
 	printf("Sum: %d", prioritySum);
 }
 
-void Day03::part2()
+void Day03::Part2()
 {
 	ScopedTimer timer;
 
@@ -70,7 +70,7 @@ void Day03::part2()
 				badge = currentLine[k];
 		}
 
-		prioritySum += getPrioValue(badge);
+		prioritySum += GetPrioValue(badge);
 	}
 	printf("Sum: %d", prioritySum);
 }

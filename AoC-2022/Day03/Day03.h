@@ -4,6 +4,6 @@
 class Day03 : public AocDay
 {
 public:
-	void AocDay::part1();
-	void AocDay::part2();
+	void AocDay::Part1();
+	void AocDay::Part2();
 };
