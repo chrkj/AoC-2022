@@ -32,8 +32,9 @@ int CalculateScore(const std::vector<std::vector<int>>& forrest, int currentHeig
 	return score;
 }
 
-int FindNumVisable(const std::vector<std::vector<int>>& forrest) 
+int FindMaxNumVisable(const std::vector<std::vector<int>>& forrest) 
 {
+	// could optimize by caching largest seen tree in a given direction
 	int numVisable = 0;
 	for (size_t treeline = 0; treeline < forrest.size(); treeline++)
 	{
@@ -47,13 +48,9 @@ int FindNumVisable(const std::vector<std::vector<int>>& forrest)
 			bool down = TraverseDir(forrest, currentTreeHeight, tree, treeline, 0, -1);
 		
 			if (left || right || up || down)
-			{
-				std::cout << currentTreeHeight;
 				numVisable++;
-			}
 		}
 	}
-	std::cout << "\n";
 	return numVisable;
 }
 
@@ -84,7 +81,7 @@ void Day08::Part1()
 
 	auto input = Utils::StringToVectorOfInts(Utils::ReadInput(INPUT));
 
-	std::cout << FindNumVisable(input);
+	printf("Max number of visible trees: %d" , FindMaxNumVisable(input));
 }
 
 void Day08::Part2()
@@ -93,5 +90,5 @@ void Day08::Part2()
 
 	auto input = Utils::StringToVectorOfInts(Utils::ReadInput(INPUT));
 
-	std::cout << FindMaxScenicScore(input);
+	printf("Max scenic score: %d", FindMaxScenicScore(input));
 }
