@@ -64,7 +64,7 @@ inline std::vector<std::shared_ptr<Node>> CreateDirs()
 			break;
 		default:
 			// Add File or Folder to current Node
-			std::vector<std::string> data = Utils::SplitString(currentLine, ' ');
+			std::vector<std::string> data = Utils::SplitString<std::string>(currentLine, " ");
 			if (data[0] == "dir")
 			{
 				auto dir = std::make_shared<Node>(data[1], 0, currentNode);

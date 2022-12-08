@@ -155,15 +155,23 @@ namespace Utils
 	}
 
 
-	inline std::vector<std::string> SplitString(std::string str, char delimiter)
+	template <typename T>
+	std::vector<T> SplitString(const std::string& str, const std::string& delimiters) 
 	{
+		std::vector<T> tokens;
 		std::string token;
-		std::vector<std::string> tokens;
-
 		std::stringstream ss(str);
-		while (getline(ss, token, delimiter))
-			tokens.push_back(token);
 
+		while (std::getline(ss, token, delimiters[0])) 
+		{
+			for (std::size_t i = 1; i < delimiters.length(); ++i) 
+			{
+				std::string::size_type pos = 0;
+				while ((pos = token.find(delimiters[i], pos)) != std::string::npos)
+					token.replace(pos, 1, " ");
+			}
+			tokens.push_back(token);
+		}
 		return tokens;
 	}
 
