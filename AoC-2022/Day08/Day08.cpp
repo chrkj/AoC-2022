@@ -18,13 +18,13 @@ bool TraverseDir(const std::vector<std::vector<int>>& forrest, int currentHeight
 
 int CalculateScore(const std::vector<std::vector<int>>& forrest, int currentHeight, int x, int y, int xDir, int yDir)
 {
-	int score = 0;
+	int score = 1;
 	x += xDir;
 	y += yDir;
 	while (x >= 0 && y >= 0 && x <= forrest.size() - 1 && y <= forrest[0].size() - 1)
 	{
 		if (forrest[y][x] >= currentHeight)
-			return score + 1;
+			return score;
 		x += xDir;
 		y += yDir;
 		score++;
@@ -68,8 +68,9 @@ int FindMaxScenicScore(const std::vector<std::vector<int>>& forrest)
 			int up = CalculateScore(forrest, currentTreeHeight, tree, treeline, 0, 1);
 			int down = CalculateScore(forrest, currentTreeHeight, tree, treeline, 0, -1);
 
-			if ((left * right * up * down) > maxScore) 
-				maxScore = left * right * up * down;
+			int currentScore = left * right * up * down;
+			if (currentScore > maxScore) 
+				maxScore = currentScore;
 		}
 	}
 	return maxScore;
