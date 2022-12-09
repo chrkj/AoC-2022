@@ -36,6 +36,15 @@
     <ClCompile Include="Day07\Day07.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day06\Day06.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day08\Day08.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day09\Day09.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day01\TEST.IN" />
@@ -52,6 +61,13 @@
     <None Include="Day05\TEST.IN" />
     <None Include="Day07\1.IN" />
     <None Include="Day07\TEST.IN" />
+    <None Include="Day06\1.IN" />
+    <None Include="Day06\TEST.IN" />
+    <None Include="Day08\1.IN" />
+    <None Include="Day08\TEST.IN" />
+    <None Include="Day09\1.IN" />
+    <None Include="Day09\TEST.IN" />
+    <None Include="Day09\TEST2.IN" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\AocDay.h">
@@ -79,6 +95,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day07\Day07.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day06\Day06.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day08\Day08.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day09\Day09.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

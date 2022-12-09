@@ -215,4 +215,23 @@ namespace Utils
 		}
 		return result;
 	}
+
+	template <typename T, typename U>
+	std::vector<std::pair<T, U>> StringToPair(const std::vector<std::string>& input)
+	{
+		std::vector<std::pair<T, U>> pairs;
+		for (const std::string& elem : input)
+		{
+			// extract the character and integer from the input element
+			T c = elem[0];
+			U i = std::stoi(elem.substr(2));
+
+			// create a pair with the character and integer and add it to the vector
+			pairs.push_back(std::make_pair(c, i));
+		}
+
+		return pairs;
+	}
+
+
 }

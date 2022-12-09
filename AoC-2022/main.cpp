@@ -2,7 +2,7 @@
 
 int main()
 {
-	Day08 day;
+	Day09 day;
 	printf("----------PART1----------\n");
 	day.Part1();
 	printf("\n----------PART2----------\n");
