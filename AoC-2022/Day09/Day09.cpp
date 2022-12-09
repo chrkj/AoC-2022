@@ -37,6 +37,26 @@ bool operator==(const Knot& lhs, const Knot& rhs)
 	else return false;
 }
 
+void UpdateRopeKnots(Knot& currentKnot, Knot& previousKnot)
+{
+	if (Knot(currentKnot.x + 2, currentKnot.y) == previousKnot)
+		currentKnot.right();
+	else if (Knot(currentKnot.x - 2, currentKnot.y) == previousKnot)
+		currentKnot.left();
+	else if (Knot(currentKnot.x, currentKnot.y + 2) == previousKnot)
+		currentKnot.up();
+	else if (Knot(currentKnot.x, currentKnot.y - 2) == previousKnot)
+		currentKnot.down();
+	else if (Knot(currentKnot.x + 2, currentKnot.y - 1) == previousKnot || Knot(currentKnot.x + 1, currentKnot.y - 2) == previousKnot || Knot(currentKnot.x + 2, currentKnot.y - 2) == previousKnot)
+		currentKnot.downRight();
+	else if (Knot(currentKnot.x + 2, currentKnot.y + 1) == previousKnot || Knot(currentKnot.x + 1, currentKnot.y + 2) == previousKnot || Knot(currentKnot.x + 2, currentKnot.y + 2) == previousKnot)
+		currentKnot.upRight();
+	else if (Knot(currentKnot.x - 2, currentKnot.y - 1) == previousKnot || Knot(currentKnot.x - 1, currentKnot.y - 2) == previousKnot || Knot(currentKnot.x - 2, currentKnot.y - 2) == previousKnot)
+		currentKnot.downLeft();
+	else if (Knot(currentKnot.x - 2, currentKnot.y + 1) == previousKnot || Knot(currentKnot.x - 1, currentKnot.y + 2) == previousKnot || Knot(currentKnot.x - 2, currentKnot.y + 2) == previousKnot)
+		currentKnot.upLeft();
+}
+
 void Day09::Part1()
 {
 	ScopedTimer timer;
@@ -56,38 +76,16 @@ void Day09::Part1()
 
 		for (size_t i = 0; i < amount; i++)
 		{
-			switch (direction)
-			{
-			case 'R':
+			if (direction == 'R')
 				head.right();
-				break;
-			case 'L':
+			else if (direction == 'L')
 				head.left();
-				break;
-			case 'U':
+			else if (direction == 'U')
 				head.up();
-				break;
-			case 'D':
+			else if (direction == 'D')
 				head.down();
-				break;
-			}
-			
-			if (Knot(tail.x + 2, tail.y) == head)
-				tail.right();
-			else if (Knot(tail.x - 2, tail.y) == head)
-				tail.left();
-			else if (Knot(tail.x, tail.y + 2) == head)
-				tail.up();
-			else if (Knot(tail.x, tail.y - 2) == head)
-				tail.down();
-			else if (Knot(tail.x + 2, tail.y - 1) == head || Knot(tail.x + 1, tail.y - 2) == head || Knot(tail.x + 2, tail.y - 2) == head)
-				tail.downRight();
-			else if (Knot(tail.x + 2, tail.y + 1) == head || Knot(tail.x + 1, tail.y + 2) == head || Knot(tail.x + 2, tail.y + 2) == head)
-				tail.upRight();
-			else if (Knot(tail.x - 2, tail.y - 1) == head || Knot(tail.x - 1, tail.y - 2) == head || Knot(tail.x - 2, tail.y - 2) == head)
-				tail.downLeft();
-			else if (Knot(tail.x - 2, tail.y + 1) == head || Knot(tail.x - 1, tail.y + 2) == head || Knot(tail.x - 2, tail.y + 2) == head)
-				tail.upLeft();
+
+			UpdateRopeKnots(tail, head);
 
 			visited.emplace(tail.x, tail.y);
 		}
@@ -115,43 +113,20 @@ void Day09::Part2()
 
 		for (size_t i = 0; i < amount; i++)
 		{
-			switch (direction)
-			{
-			case 'R':
+			if (direction == 'R')
 				head.right();
-				break;
-			case 'L':
+			else if (direction == 'L')
 				head.left();
-				break;
-			case 'U':
+			else if (direction == 'U')
 				head.up();
-				break;
-			case 'D':
+			else if (direction == 'D')
 				head.down();
-				break;
-			}
 
 			for (int i = 1; i < knots.size(); i++)
 			{
 				Knot& currentKnot = knots[i];
 				Knot& previousKnot = knots[i - 1];
-
-				if (Knot(currentKnot.x + 2, currentKnot.y) == previousKnot)
-					currentKnot.right();
-				else if (Knot(currentKnot.x - 2, currentKnot.y) == previousKnot)
-					currentKnot.left();
-				else if (Knot(currentKnot.x, currentKnot.y + 2) == previousKnot)
-					currentKnot.up();
-				else if (Knot(currentKnot.x, currentKnot.y - 2) == previousKnot)
-					currentKnot.down();
-				else if (Knot(currentKnot.x + 2, currentKnot.y - 1) == previousKnot || Knot(currentKnot.x + 1, currentKnot.y - 2) == previousKnot || Knot(currentKnot.x + 2, currentKnot.y - 2) == previousKnot)
-					currentKnot.downRight();
-				else if (Knot(currentKnot.x + 2, currentKnot.y + 1) == previousKnot || Knot(currentKnot.x + 1, currentKnot.y + 2) == previousKnot || Knot(currentKnot.x + 2, currentKnot.y + 2) == previousKnot)
-					currentKnot.upRight();
-				else if (Knot(currentKnot.x - 2, currentKnot.y - 1) == previousKnot || Knot(currentKnot.x - 1, currentKnot.y - 2) == previousKnot || Knot(currentKnot.x - 2, currentKnot.y - 2) == previousKnot)
-					currentKnot.downLeft();
-				else if (Knot(currentKnot.x - 2, currentKnot.y + 1) == previousKnot || Knot(currentKnot.x - 1, currentKnot.y + 2) == previousKnot || Knot(currentKnot.x - 2, currentKnot.y + 2) == previousKnot)
-					currentKnot.upLeft();
+				UpdateRopeKnots(currentKnot, previousKnot);
 
 				visited.emplace(tail.x, tail.y);
 			}
