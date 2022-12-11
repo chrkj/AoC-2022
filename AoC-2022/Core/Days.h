@@ -8,3 +8,4 @@
 #include "../Day07/Day07.h"
 #include "../Day08/Day08.h"
 #include "../Day09/Day09.h"
+#include "../Day10/Day10.h"
