@@ -233,5 +233,32 @@ namespace Utils
 		return pairs;
 	}
 
+	inline std::vector<int> GetIntegersFromString(const std::string& str)
+	{
+		std::vector<int> integers;
+		std::string current_number;
 
+		for (char c : str)
+		{
+			if (std::isdigit(c))
+			{
+				current_number += c;
+			}
+			else
+			{
+				if (!current_number.empty())
+				{
+					integers.push_back(std::stoi(current_number));
+					current_number.clear();
+				}
+			}
+		}
+
+		if (!current_number.empty())
+		{
+			integers.push_back(std::stoi(current_number));
+		}
+
+		return integers;
+	}
 }

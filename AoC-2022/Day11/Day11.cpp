@@ -133,14 +133,14 @@ std::vector<Monkey> GenerateMonkeys(std::vector<string>& input)
 			if (i % 7 == 0)
 			{
 				// Setup Items
-				auto items = Utils::find_integers(currentLine);
+				auto items = Utils::GetIntegersFromString(currentLine);
 				for (const auto& item : items)
 					monkey.GiveItem(Item(item));
 			}
 			else if (i % 7 == 1)
 			{
 				// Setup operation
-				auto value = Utils::find_integers(currentLine);
+				auto value = Utils::GetIntegersFromString(currentLine);
 				char op = currentLine[23];
 				if (op == '+')
 					monkey.SetOperator(OPERATOR::ADD);
@@ -160,7 +160,7 @@ std::vector<Monkey> GenerateMonkeys(std::vector<string>& input)
 			else if (i % 7 == 2)
 			{
 				// Setup test
-				auto testValue = Utils::find_integers(currentLine);
+				auto testValue = Utils::GetIntegersFromString(currentLine);
 				monkey.SetTestValue(testValue[0]);
 			}
 			else if (i % 7 == 3)
