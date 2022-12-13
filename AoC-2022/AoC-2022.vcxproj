@@ -143,6 +143,7 @@
     <ClCompile Include="Day10\Day10.cpp" />
     <ClCompile Include="Day11\Day11.cpp" />
     <ClCompile Include="Day12\Day12.cpp" />
+    <ClCompile Include="Day13\Day13.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +174,8 @@
     <None Include="Day11\TEST.IN" />
     <None Include="Day12\1.IN" />
     <None Include="Day12\TEST.IN" />
+    <None Include="Day13\1.IN" />
+    <None Include="Day13\TEST.IN" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\AocDay.h" />
@@ -187,6 +190,7 @@
     <ClInclude Include="Day10\Day10.h" />
     <ClInclude Include="Day11\Day11.h" />
     <ClInclude Include="Day12\Day12.h" />
+    <ClInclude Include="Day13\Day13.h" />
     <ClInclude Include="Utils\ScopedTimer.h" />
     <ClInclude Include="Utils\Timer.h" />
     <ClInclude Include="Utils\Utils.h" />

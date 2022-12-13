@@ -54,6 +54,9 @@
     <ClCompile Include="Day12\Day12.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day13\Day13.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day01\TEST.IN" />
@@ -83,6 +86,8 @@
     <None Include="Day11\TEST.IN" />
     <None Include="Day12\TEST.IN" />
     <None Include="Day12\1.IN" />
+    <None Include="Day13\1.IN" />
+    <None Include="Day13\TEST.IN" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\AocDay.h">
@@ -128,6 +133,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day12\Day12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day13\Day13.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
