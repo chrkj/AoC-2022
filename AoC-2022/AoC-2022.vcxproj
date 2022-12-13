@@ -144,7 +144,6 @@
     <ClCompile Include="Day11\Day11.cpp" />
     <ClCompile Include="Day12\Day12.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Utils\AStar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day01\TEST.IN" />
@@ -188,7 +187,6 @@
     <ClInclude Include="Day10\Day10.h" />
     <ClInclude Include="Day11\Day11.h" />
     <ClInclude Include="Day12\Day12.h" />
-    <ClInclude Include="Utils\AStar.h" />
     <ClInclude Include="Utils\ScopedTimer.h" />
     <ClInclude Include="Utils\Timer.h" />
     <ClInclude Include="Utils\Utils.h" />
