@@ -261,4 +261,48 @@ namespace Utils
 
 		return integers;
 	}
+
+	inline std::pair<int, int> GetIntPairFromString(const std::string& str)
+	{
+		std::pair<int, int> integers;
+		std::string current_number;
+
+		for (char c : str)
+		{
+			if (std::isdigit(c))
+			{
+				current_number += c;
+			}
+			else
+			{
+				if (!current_number.empty())
+				{
+					if (integers.first == 0)
+					{
+						integers.first = std::stoi(current_number);
+					}
+					else
+					{
+						integers.second = std::stoi(current_number);
+					}
+					current_number.clear();
+				}
+			}
+		}
+
+		if (!current_number.empty())
+		{
+			if (integers.first == 0)
+			{
+				integers.first = std::stoi(current_number);
+			}
+			else
+			{
+				integers.second = std::stoi(current_number);
+			}
+		}
+
+		return integers;
+	}
+
 }
