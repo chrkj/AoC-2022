@@ -9,6 +9,7 @@
 #include <map>
 #include <charconv>
 #include <assert.h>
+#include <variant>
 
 #include "Utils/Utils.h"
 #include "Utils/Timer.h"
